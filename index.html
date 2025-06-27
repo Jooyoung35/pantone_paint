@@ -4,12 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Color your space - Pantone Paint</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" as="style" crossorigin 
   href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
   <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.material-symbols-outlined').click(function(){
+            $('.top-ban').stop().slideUp(500);
+        });
+    });
+  </script>
 </head>
+
+
 <body>
   <div id="header"> 
     <div class="top-ban">
@@ -28,34 +38,34 @@
           <a href="#">PANTONE PAINT</a>
           <ul class="gnb-sub">
             <li class="title">PANTONE PAINT</li>
-            <li>브랜드스토리</li>
-            <li>제품소개</li>
-            <li>About pantone</li>
-            <li>컬러스토리</li>
-            <li>올해의 컬러</li>
-            <li><img src="images/gnb-sub-img01.png" alt="패인트사진1"></li>
+            <li><a href="#">브랜드스토리</a></li>
+            <li><a href="#">제품소개</a></li>
+            <li><a href="#">About pantone</a></li>
+            <li><a href="#">컬러스토리</a></li>
+            <li><a href="#">올해의 컬러</a></li>
+            <li><img src="images/gnb-sub-img01.png" alt="페인트사진1"></li>
           </ul>
         </li>
         <li>
           <a href="#">COLOR</a>
-          <!-- <ul class="gnb-sub">
+          <ul class="gnb-sub">
             <li class="title">COLOR</li>
-            <li>컬러차트</li>
-            <li>베스트컬러</li>
-            <li>스타일별컬러</li>
-            <li>시즌트렌트</li>
-            <li><img src="images/gnb-sub-img02.png" alt="패인트사진2"></li>
-          </ul> -->
+            <li><a href="#">컬러차트</a></li>
+            <li><a href="#">베스트컬러</a></li>
+            <li><a href="#">스타일별컬러</a></li>
+            <li><a href="#">시즌트렌트</a></li>
+            <li><img src="images/gnb-sub-img02.png" alt="페인트사진2"></li>
+          </ul>
         </li>
         <li>
           <a href="#">GALLERY</a>
-          <!-- <ul class="gnb-sub">
+          <ul class="gnb-sub">
             <li class="title">GALLERY</li>
-            <li>베스트리뷰</li>
-            <li>시공사례</li>
-            <li>홈스타일링</li>
-            <li><img src="images/gnb-sub-img03.png" alt="패인트사진3"></li>
-          </ul> -->
+            <li><a href="#">베스트리뷰</a></li>
+            <li><a href="#">시공사례</a></li>
+            <li><a href="#">홈스타일링</a></li>
+            <li><img src="images/gnb-sub-img03.png" alt="페인트사진3"></li>
+          </ul>
         </li>
         <li>
           <a href="#">SHOP</a>
@@ -64,9 +74,9 @@
           <a href="#">SERVICE</a>
           <ul class="gnb-sub">
             <li class="title">SERVICE</li>
-            <li>페인팅영상</li>
-            <li>Tips</li>
-            <li>공지사항</li>
+            <li><a href="#">페인팅영상</a></li>
+            <li><a href="#">Tips</a></li>
+            <li><a href="#">공지사항</a></li>
             <li><img src="images/gnb-sub-img04.png" alt="패인트사진3"></li>
           </ul>
         </li>
@@ -74,21 +84,130 @@
 
       <h1 class="logo">
         <a href="#">
-          <img src="images/logo-top.png" alt="logo">
+          <img src="images/logo-top-w.png" alt="logo">
         </a>
       </h1>
 
       <ul class="side-menu">
-        <li><a href="https://brand.naver.com/noroopaintmall/">공식스토어</a></li>
-        <li><a href="https://blog.naver.com/pantonepaint">팬톤무드로그</a></li>
+        <li><a href="https://brand.naver.com/noroopaintmall/" target="_blank">공식스토어</a></li>
+        <li><a href="https://blog.naver.com/pantonepaint" target="_blank">팬톤무드로그</a></li>
       </ul>
     </div>
   </div>
 
 
-  <div id="section"></div>
+  <div id="section">
+    <div class="main-banner">
+      <swiper-container class="mainSwiper" loop="true" naveigation="true" pagination-clickable="true"  space-between="0"
+          centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
+        <swiper-slide class="bg1 slide">
+          <div class="ban-txt">
+            <h1 class="m-banner-kr">프리미엄 감성 페인트</h1>
+            <h2 class="m-banner-en">
+                Premium emotional paint brand
+            </h2>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="bg2 slide">
+          <div class="ban-txt">
+            <h1 class="m-banner-kr">공간에 감성을 채우는 컬러 경험</h1>
+            <h2 class="m-banner-en">
+                A color experience that fills spaces with mood
+            </h2>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="bg3 slide">
+          <div class="ban-txt">
+            <h1 class="m-banner-kr">나의 하루에 어울리는 컬러</h1>
+            <h2 class="m-banner-en">
+                Find the color that suits your day
+            </h2>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="bg4 slide">
+          <div class="ban-txt">
+            <h1 class="m-banner-kr">프리미엄 팬톤페인트로 시작하는 셀프 페인트</h1>
+            <h2 class="m-banner-en">
+                Start your self-painting journey with premium Pantone Paint
+            </h2>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+    <ul class="brand-intro">
+      <li class="brand-title">
+        <h2>PANTONE PAINT</h2>
+        <h3>
+          FILL YOUR SPACE<br>WITH<span> MOOD</span> AND <span>COLOR</span>
+        </h3>
+        <div class="img-area">
+          <img src="images/brand-paint.png" alt="브랜드소개-페인트">
+        </div>
+      </li>
+      <li class="brand-desc">
+        <p class="s-title">브랜드 소개</p>
+        <p class="s-desc para1">
+          팬톤페인트는 노루페인트가 글로벌 컬러 전문기업 팬톤(Pantone)과 협업하여 만든 프리미엄 감성 페인트 브랜드입니다.
+        </p>
+        <p class="s-desc para2">
+          우리는 단순한 색이 아닌, 공간에 감정을 채우는 컬러 경험을 제안합니다.당신의 하루와 무드에 어울리는 색을 찾는 여정, 팬톤페인트와 함께하세요.
+        </p>
+        <p class="s-desc para3">
+          Pantone Paint is a premium emotional paint brand created through a collaboration between Noroo Paint and the global color authority, Pantone
+        </p>
+        <p class="s-desc para4">
+          We offer more than just color — <br>
+          we propose a color experience that fills spaces with emotion Find the perfect shade for your mood and your day with Pantone Paint
+        </p>
+      </li>
+    </ul>
+
+    <div class="color-of-year">
+      <div class="wrap-cont">
+        <div class="y-img-area">
+          <img src="images/color-of-year_mocha-mousee.png" alt="mocha-mousee">
+        </div>
+        <div class="y-txt-area">
+          <h2>COLOR OF THE YEAR 2025</h2>
+          <p>
+            2025년 PANTONE 올해의 컬러로 선정된 PANTONE 17-1230 Mocha Mousse는<br>
+            즐거움과 달콤함을 불러 일으키는 소프트 브라운 컬러입니다.
+          </p>
+          <a href="#" class="btn">자세히보기</a>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="living-in-color">
+      <h1 class="section-title">LIVING IN COLOR</h1>
+    </div>
+
+  </div>
+
 
 
   <div id="footer"></div>
+
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+
+<script type="module">
+    import { register } from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.mjs';
+    register();
+  
+    //마우스 스크롤했을때 헤더에 배경색상넣기
+      window.addEventListener('scroll', function () { 
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+      } else {
+      header.classList.remove('scrolled');
+      }
+      });
+
+</script>
 </body>
 </html>

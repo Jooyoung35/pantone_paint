@@ -10,6 +10,17 @@ body{
   /* font-family: 'Playfair Display', serif; */
 }
 
+#header{
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+#header.scrolled {
+  background-color: #bd2030;
+  /* background-color: #ffffff9a; */
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 /* top banner */
 #header .top-ban{
   width: 100%;
@@ -41,7 +52,6 @@ body{
   justify-content: space-between;
   padding: 30px 70px;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
 /* gnb */
@@ -56,19 +66,28 @@ body{
   margin: 0 10px;
   position: relative;
 }
+#header .wrap-header .gnb > li a{
+  color: white;
+}
 #header .wrap-header .gnb li .gnb-sub{
   position: absolute;
   width: 280px;
   top: 40px; left: 0px;
   padding: 20px;
   border-radius: 15px;
-  background-color: skyblue;
+  background-color: rgb(245, 245, 245);
+  display: none;
+  transition: all 0.3s;
 }
-#header .wrap-header .gnb li .gnb-sub li{
+#header .wrap-header .gnb li .gnb-sub li a{
   color: rgb(71, 71, 71);
 }
 #header .wrap-header .gnb li .gnb-sub li+li{
   margin-top: 10px;
+  transition: all 0.3s;
+}
+#header .wrap-header .gnb li .gnb-sub li+li:hover{
+  text-decoration: underline;
 }
 #header .wrap-header .gnb li .gnb-sub .title{
   font-size: 18px;
@@ -83,6 +102,10 @@ body{
 #header .wrap-header .gnb li .gnb-sub li:last-child > img{
   width: 150px;
   border-radius: 5px;
+}
+
+#header .wrap-header .gnb li:hover .gnb-sub{
+  display: block;
 }
 
 
@@ -111,11 +134,260 @@ body{
 }
 #header .wrap-header .side-menu li{
   margin-left: 15px;
-  border: 1px solid red;
 }
 #header .wrap-header .side-menu li  a{
   transition: all 0.3s;
+  color: white;
 } 
 #header .wrap-header .side-menu li:hover a{
   color: #BD2031;
 }
+
+
+
+/* section 영역------------------------ */
+
+/* main banner 영역 */
+
+#section .main-banner{
+  width: 100%;
+  height: 923px;
+  position: relative;
+  top: 0px; left: 0;
+  overflow: hidden;
+}
+
+/* 메인배너 스와이퍼-=--------- */
+#section .main-banner .mainSwiper{
+  width: 100%;
+  height: 100%;
+}
+
+#section .main-banner .mainSwiper::part(bullet) {
+  box-sizing: border-box;
+  width: 30px;
+  height: 3px;
+  margin: 0 1px;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+
+#section .main-banner .mainSwiper::part(bullet-active) {
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 60px;
+  border-radius: 0;
+  transition: all 0.5s;
+}
+
+#section .main-banner .mainSwiper .slide {
+  width: 20%;
+  height: 923px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#section .main-banner .mainSwiper .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ---------------------------------------- */
+
+#section .main-banner .mainSwiper .bg1{
+  background-image: url(images/main_ban_01.png);
+}
+#section .main-banner .mainSwiper .bg2{
+  background-image: url(images/main_ban_02.png);
+}
+#section .main-banner .mainSwiper .bg3{
+  background-image: url(images/main_ban_03.png);
+}
+#section .main-banner .mainSwiper .bg4{
+  background-image: url(images/main_ban_04.png);
+}
+
+
+
+#section .main-banner .mainSwiper .slide .ban-txt{
+  position: absolute;
+  color: rgb(243, 243, 243);
+}
+#section .main-banner .mainSwiper .bg1 .ban-txt{
+  top: 40%;
+  right: 13%;
+  text-align: right;
+  color: #ad9ea0;
+}
+#section .main-banner .mainSwiper .bg2 .ban-txt{
+  top: 80%;
+  left: 13%;
+  text-align: left;
+  color: #a56e74;
+}
+#section .main-banner .mainSwiper .bg3 .ban-txt,
+#section .main-banner .mainSwiper .bg4 .ban-txt{
+  top: 50%;
+  left: 13%;
+  text-align: left;
+  color: #f7f7f7;
+}
+#section .main-banner .mainSwiper .slide .ban-txt .m-banner-kr{
+  font-size: 18px;
+  font-weight: 400;
+}
+#section .main-banner .mainSwiper .slide .ban-txt .m-banner-en{
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 2;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+
+
+
+/* 브랜드 소개 */
+
+#section .brand-intro{
+  display: flex;
+  width: 78%;
+  margin: 200px auto 0;
+}
+#section .brand-intro .brand-title{
+  width: 60%;
+  font-family: 'Playfair Display', serif;
+}
+#section .brand-intro .brand-title h2{
+  color: #BD2031;
+  font-size: 76px;
+  font-weight: 400;
+}
+#section .brand-intro .brand-title h3{
+  color: #AEAEAE;
+  font-size: 44px;
+  font-weight: 300;
+}
+#section .brand-intro .brand-title h3 span{
+  color: #2B2B2B;
+}
+#section .brand-intro .brand-title .img-area{
+  text-align: right;
+  padding-right: 250px;
+  margin-top: 30px;
+}
+#section .brand-intro .brand-title .img-area img{
+  width: 270px;
+}
+
+
+
+#section .brand-intro .brand-desc{
+  width: 40%;
+  padding-top: 100px;
+}
+#section .brand-intro .brand-desc .s-title{
+  font-weight: 700;
+  color: #BD2031;
+  margin-bottom: 16px;
+}
+#section .brand-intro .brand-desc .s-desc{
+  color: #2b2b2b; 
+  font-size: 15px;
+  /* font-weight: 300; */
+}
+#section .brand-intro .brand-desc .para2,
+#section .brand-intro .brand-desc .para3,
+#section .brand-intro .brand-desc .para4{
+  margin-top: 30px;
+}
+
+
+
+/* 올해의 컬러 ------------- */
+
+#section .color-of-year{
+  width: 100%;
+  height: 540px;
+  margin-top: 200px;
+  background-image: url(images/color-of-years_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#section .color-of-year .wrap-cont{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+}
+#section .color-of-year .wrap-cont .y-img-area{
+  width: 50%;
+}
+#section .color-of-year .wrap-cont .y-img-area img{
+  width: 280px;
+  margin-left: 120px;
+}
+
+#section .color-of-year .wrap-cont .y-txt-area{
+  width: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#section .color-of-year .wrap-cont .y-txt-area h2{
+  font-size: 30px;
+  font-weight: 600;
+}
+#section .color-of-year .wrap-cont .y-txt-area p{
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 20px;
+  line-height: 1.5;
+  color: rgb(204, 204, 204);
+}
+#section .color-of-year .wrap-cont .y-txt-area a.btn{
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 300;
+  width: 165px;
+  height: 45px;
+  padding-top: 11px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-top: 70px;
+  transition: all 0.3s;
+}
+#section .color-of-year .wrap-cont .y-txt-area a.btn:hover{
+  border: 1px solid #BD2031;
+  background-color: #BD2031;
+}
+
+
+
+
+/* living in color--------------- */
+
+#section .living-in-color{
+  margin-top: 200px;
+}
+
+#section .section-title{
+  color: #2b2b2b;
+  font-size: 44px;
+  font-weight: 800;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+
+
