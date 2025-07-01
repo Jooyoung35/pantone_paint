@@ -12,14 +12,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-        $('.material-symbols-outlined').click(function(){
+        $('.top-ban-btn').click(function(){
             $('.top-ban').stop().slideUp(500);
         });
-
-        //top button 
         $(".top-btn").click(function(){
             $('html, body').stop().animate({scrollTop : 0}, 500);
         });
+
         // 탑버튼 스크롤 하면 나타나기 
         const topBtn = document.querySelector('.top-btn');
 
@@ -31,6 +30,52 @@
         }
         });
 
+        //gnb 나타나기 ---
+        $('.gnb-toggle').click(function(){
+          $('#header .wrap-header .gnb').toggleClass('active');
+
+          // $('.gnb-toggle').hide();
+          // $('.gnb-toggle-close').show();
+
+          
+          // $('.gnb-toggle-close').click(function(){
+          
+          // $('#header .wrap-header .gnb').removeClass('active');
+
+          
+          // $('.gnb-toggle-close').hide();
+          // $('.gnb-toggle').show();
+        });
+      
+        
+
+        //gnb 아코디언 메뉴(모바일)
+        $('.gnb>li>a').click(function(e){
+          if ($(window).width() <= 1280) {
+        e.preventDefault();  
+
+        if($(this).hasClass("active")){ 
+            $('.gnb>li>a').siblings("ul").stop().slideUp(500); 
+            $('.gnb>li>a').removeClass("active");
+            $(this).removeClass("active"); 
+            $(this).siblings("ul").stop().slideUp(500); 
+
+        }else{ 
+            $('.gnb>li>a').siblings("ul").stop().slideUp(500);
+            $('.gnb>li>a').removeClass("active");
+            $(this).addClass("active"); 
+            $(this).siblings("ul").stop().slideDown(500);  
+        }           
+        }});
+
+        function resetGnbForDesktop() { //리셋하기
+          if ($(window).width() > 1280) {
+            $('.gnb-sub').removeAttr('style');
+            $('.gnb>li>a').removeClass('active');
+          }
+        }
+
+        $(window).on('resize', resetGnbForDesktop);
     });
   </script>
 </head>
@@ -38,17 +83,21 @@
 
 <body>
   <div id="header"> 
-    <div class="top-ban">
-      <span></span><!--여백-->
+    <!-- <div class="top-ban">
+      <span></span>
       <a href="https://blog.naver.com/pantonepaint">
         인테리어&페인트 이야기가 있는 곳, 팬톤 페인트 블로그에서 다양한 스토리를 확인해 보세요
       </a>
-      <span class="material-symbols-outlined">close</span>
-    </div>
+      <span class="material-symbols-outlined top-ban-btn">close</span>
+    </div> -->
 
     
 
     <div class="wrap-header">
+      <div class="menu-btn">
+        <span class="material-symbols-outlined gnb-toggle">menu</span>
+        <span class="material-symbols-outlined gnb-toggle-close">close</span>
+      </div>
       <ul class="gnb">
         <li>
           <a href="#">PANTONE PAINT</a>
@@ -239,13 +288,15 @@
               </a>
             </div>
           </div>
-
-          <div class="swiper-button-prev">
-            <img src="images/arrow-left.png" alt="이전" />
+          <div class="wrap-nav">
+            <div class="swiper-button-prev">
+              <img src="images/arrow-left.png" alt="이전" />
+            </div>
+            <div class="swiper-button-next">
+              <img src="images/arrow-right.png" alt="다음" />
+            </div>
           </div>
-          <div class="swiper-button-next">
-            <img src="images/arrow-right.png" alt="다음" />
-          </div>
+          
       </div>
     </div>
 
@@ -316,55 +367,81 @@
         </div>
         <ul class="item-list">
           <li>
-            <a href="#">
-              <div class="item-img">
-                <img src="images/item1.png" alt="모카무스">
-                <img src="images/item-01-hover.jpg" alt="모카무스2">
-              </div>
-              <div class="item-txt">
-                <p>17-1230 모카무스 4L</p>
-                <span>2025 올해의 컬러</span>
-              </div>
-            </a>
+            <div class="item-img">
+              <img src="images/item1.png" alt="모카무스">
+              <img src="images/item-01-hover.jpg" alt="모카무스2">
+            </div>
+            <div class="item-txt">
+              <p>17-1230 모카무스 4L</p>
+              <span>2025 올해의 컬러</span>
+            </div>
           </li>
           <li>
-            <a href="#">
-              <div class="item-img">
-                <img src="images/item2.png" alt="아몬드오일">
-                <img src="images/item-02-hover.jpg" alt="아몬드오일2">
-              </div>
-              <div class="item-txt">
-                <p>12-0713 Almond Oil</p>
-                <span>벽지/가구용 소용량 #에그쉘광</span>
-              </div>
-            </a>
+            <div class="item-img">
+              <img src="images/item2.png" alt="아몬드오일">
+              <img src="images/item-02-hover.jpg" alt="아몬드오일2">
+            </div>
+            <div class="item-txt">
+              <p>12-0713 Almond Oil</p>
+              <span>벽지/가구용 소용량 #에그쉘광</span>
+            </div>
           </li>
           <li>
-            <a href="#">
-              <div class="item-img">
-                <img src="images/item3.png" alt="브라이트화이트">
-                <img src="images/item-03-hover.jpg" alt="브라이트화이트2">
-              </div>
-              <div class="item-txt">
-                <p>11-0601 Bright White</p>
-                <span>벽지/가구용 소용량 #에그쉘광</span>
-              </div>
-            </a>
+            <div class="item-img">
+              <img src="images/item3.png" alt="브라이트화이트">
+              <img src="images/item-03-hover.jpg" alt="브라이트화이트2">
+            </div>
+            <div class="item-txt">
+              <p>11-0601 Bright White</p>
+              <span>벽지/가구용 소용량 #에그쉘광</span>
+            </div>
           </li>
           <li>
-            <a href="#">
-              <div class="item-img">
-                <img src="images/item4.png" alt="수성타일페인트">
-                <img src="images/item-04-hover.jpg" alt="수성타일페인트2">
-              </div>
-              <div class="item-txt">
-                <p>13-0403 Gray Morn</p>
-                <span>수성 타일 페인트</span>
-              </div>
-            </a>
+            <div class="item-img">
+              <img src="images/item4.png" alt="수성타일페인트">
+              <img src="images/item-04-hover.jpg" alt="수성타일페인트2">
+            </div>
+            <div class="item-txt">
+              <p>13-0403 Gray Morn</p>
+              <span>수성 타일 페인트</span>
+            </div>
           </li>
         </ul>
         
+      </div>
+
+
+      <div class="review">
+        <div class="top-title">
+          <h1 class="section-title">REVIEW</h1>
+          <a href="#" class="more-btn">view all</a>
+        </div>
+        <ul class="review-cont">
+          <li>
+            <div class="re-img-area">
+              <img src="images/review_01.png" alt="리뷰이미지">
+            </div>
+            <div class="re-txt-area">
+              <h3>PANTONE<br>11-0602 Snow White</h3>
+              <span class="star">★★★★★</span>
+              <p class="re-title">"거실이 한층 넓어 보이고, 분위기가 확 살아났어요!"</p>
+              <p class="re-desc">웨인스코팅 몰딩 덕분에 거실 벽이 심심하지 않고 입체감이 생겼는데, 스노우 화이트 컬러를 칠하니 훨씬 밝고 고급스러운 느낌이 들었어요. 붓질도 부드럽고 마감이 깔끔해서 처음 해보는 셀프 페인팅인데도 결과가 만족스럽습니다. 햇빛 들어올 때 벽이 정말 예뻐요.</p>
+              <span class="user">셀인사랑 님</span>
+            </div>
+          </li>
+          <li>
+            <div class="re-img-area">
+              <img src="images/review_02.png" alt="리뷰이미지2">
+            </div>
+            <div class="re-txt-area">
+              <h3>PANTONE<br>17-1544 Burnt Sienna</h3>
+              <span class="star">★★★★★</span>
+              <p class="re-title">"작은 포인트 하나로, 집의 분위기가 달라졌어요!"</p>
+              <p class="re-desc">드레스룸 입구에 Burnt Sienna 컬러를 선택한 건 정말 탁월한 결정이었어요. 처음엔 조금 과감한 선택인가 싶었지만, 오히려 그게 포인트가 되었어요. 따뜻하고 세련된 붉은 톤이 집 전체 분위기에 생기를 주고, 들어올 때 마다 기분이 좋아지는 공간이 되었답니다. 너무 유니크하고 예쁜 컬러에요!</p>
+              <span class="user">anna house 님</span>
+            </div>
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -481,6 +558,10 @@
     window.addEventListener('resize', () => {
         updateSlidesPerView();
     });
+
+
+
+  
 
 </script>
 </body>
