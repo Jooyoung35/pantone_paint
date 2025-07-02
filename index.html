@@ -32,19 +32,15 @@
 
         //gnb 나타나기 ---
         $('.gnb-toggle').click(function(){
-          $('#header .wrap-header .gnb').toggleClass('active');
-
-          // $('.gnb-toggle').hide();
-          // $('.gnb-toggle-close').show();
-
+          $('.gnb').toggleClass('active');
+          $('.gnb-toggle').hide();
+          $('.gnb-toggle-close').show();
+        });
           
-          // $('.gnb-toggle-close').click(function(){
-          
-          // $('#header .wrap-header .gnb').removeClass('active');
-
-          
-          // $('.gnb-toggle-close').hide();
-          // $('.gnb-toggle').show();
+        $('.gnb-toggle-close').click(function(){
+          $('.gnb').removeClass('active');
+          $('.gnb-toggle-close').hide();
+          $('.gnb-toggle').show();
         });
       
         
@@ -383,7 +379,7 @@
             </div>
             <div class="item-txt">
               <p>12-0713 Almond Oil</p>
-              <span>벽지/가구용 소용량 #에그쉘광</span>
+              <span>벽지/가구용 #에그쉘광</span>
             </div>
           </li>
           <li>
@@ -393,7 +389,7 @@
             </div>
             <div class="item-txt">
               <p>11-0601 Bright White</p>
-              <span>벽지/가구용 소용량 #에그쉘광</span>
+              <span>벽지/가구용 #에그쉘광</span>
             </div>
           </li>
           <li>
