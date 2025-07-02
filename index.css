@@ -1187,11 +1187,11 @@ body{
 /* main banner 영역 */
 
   #section .main-banner{
-    height: 600px;
+    height: 700px;
   }
   #section .main-banner .mainSwiper .slide {
-  height: 600px;
-}
+    height: 600px;
+  }
   #section .main-banner .mainSwiper .bg1{
     background-image: url(images/main_ban_01_mo.png);
   }
@@ -1206,12 +1206,12 @@ body{
   }
 
   #section .main-banner .mainSwiper .bg1 .ban-txt{
-    top: 30%;
+    top: 80%;
     right: 30%;
     text-align: left;
   }
   #section .main-banner .mainSwiper .bg2 .ban-txt{
-    top: 26%;
+    top: 80%;
     left: 5%;
     text-align: left;
     color: #a56e74;
@@ -1345,7 +1345,7 @@ body{
   margin-top: 100px;
 }
 #section .color-mood .wrap-mood-cont .sub-title{
-  width: 80%;
+  width: 90%;
   padding: 40px 0  30px;
 }
 #section .color-mood .wrap-mood-cont .sub-title h3{
@@ -1357,7 +1357,10 @@ body{
 }
 
 /* 슬라이드영역 */
-
+#section .color-mood .wrap-mood-cont .swiper-color-mood{
+  width: 90%;
+  margin: 0 auto;
+}
 #section .color-mood .wrap-mood-cont .swiper-color-mood .cont-slide a .mm-txt{
   font-size: 18px;
 }
@@ -1365,8 +1368,11 @@ body{
   font-size: 14px;
 }
 #section .color-mood .wrap-mood-cont .swiper-color-mood .dummy-slide {
-  width: 1% !important;
+  /* width: 1% !important; */
+  display: none;
 }
+
+
 
 
 
