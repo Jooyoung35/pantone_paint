@@ -540,7 +540,7 @@ body{
 }
 #section .color-mood .wrap-mood-cont .swiper-color-mood .cont-slide{
   flex-shrink: 0;
-  width: 420px;
+  /* width: 420px; */
   height: 320px;
   border-radius: 20px;
   background-repeat: no-repeat;
