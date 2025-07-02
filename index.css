@@ -1187,10 +1187,10 @@ body{
 /* main banner 영역 */
 
   #section .main-banner{
-    /* height: 750px; */
+    height: 750px;
   }
   #section .main-banner .mainSwiper .slide {
-    /* height: 7px; */
+    height: 750px;
   }
   #section .main-banner .mainSwiper .bg1{
     background-image: url(images/main_ban_01_mo.png);
@@ -1207,8 +1207,8 @@ body{
 
   #section .main-banner .mainSwiper .bg1 .ban-txt{
     top: 80%;
-    right: 60%;
-    text-align: left;
+    right: 10%;
+    text-align: right;
   }
   #section .main-banner .mainSwiper .bg2 .ban-txt{
     top: 80%;
@@ -1274,7 +1274,7 @@ body{
   margin-top: 100px;
 }
 #section .color-of-year .wrap-cont{
-  width: 80%;
+  width: 85%;
   display: block;
 }
 #section .color-of-year .wrap-cont .y-img-area{
