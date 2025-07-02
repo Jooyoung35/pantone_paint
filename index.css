@@ -1187,10 +1187,10 @@ body{
 /* main banner 영역 */
 
   #section .main-banner{
-    height: 700px;
+    /* height: 750px; */
   }
   #section .main-banner .mainSwiper .slide {
-    height: 600px;
+    /* height: 7px; */
   }
   #section .main-banner .mainSwiper .bg1{
     background-image: url(images/main_ban_01_mo.png);
@@ -1207,7 +1207,7 @@ body{
 
   #section .main-banner .mainSwiper .bg1 .ban-txt{
     top: 80%;
-    right: 30%;
+    right: 60%;
     text-align: left;
   }
   #section .main-banner .mainSwiper .bg2 .ban-txt{
