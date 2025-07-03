@@ -313,6 +313,11 @@ body{
   width: 270px;
 }
 
+/* option */
+.split > span{
+  display: inline-block;
+}
+
 
 
 #section .brand-intro .brand-desc{
@@ -322,11 +327,12 @@ body{
 #section .brand-intro .brand-desc .s-title{
   font-weight: 700;
   color: #BD2031;
+  font-size: 20px;
   margin-bottom: 16px;
 }
 #section .brand-intro .brand-desc .s-desc{
   color: #2b2b2b; 
-  font-size: 15px;
+  font-size: 16px;
   /* font-weight: 300; */
 }
 #section .brand-intro .brand-desc .para2,
@@ -345,11 +351,14 @@ body{
   margin-top: 200px;
   background-image: url(images/color-of-years_bg.png);
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-attachment: fixed;
 }
+
 #section .color-of-year .wrap-cont{
   width: 60%;
   margin: 0 auto;

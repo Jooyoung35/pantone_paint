@@ -199,9 +199,10 @@
 
     <ul class="brand-intro">
       <li class="brand-title">
-        <h2>PANTONE PAINT</h2>
+        <h2 class="split">PANTONE PAINT</h2>
         <h3>
-          FILL YOUR SPACE<br>WITH<span> MOOD</span> AND <span>COLOR</span>
+          FILL YOUR SPACE<br>
+          WITH <span>MOOD</span> AND <span>COLOR</span>
         </h3>
         <div class="img-area">
           <img src="images/brand-paint.png" alt="브랜드소개-페인트">
@@ -292,7 +293,7 @@
               <img src="images/arrow-right.png" alt="다음" />
             </div>
           </div>
-          
+        </div>
       </div>
     </div>
 
@@ -356,7 +357,11 @@
       </div>
       
 
-      <div class="our-picks">
+      
+
+    </div>
+
+    <div class="our-picks">
         <div class="top-title">
           <h1 class="section-title">OUR PICKS</h1>
           <a href="https://brand.naver.com/noroopaintmall/" class="more-btn">view all</a>
@@ -440,8 +445,6 @@
         </ul>
       </div>
 
-    </div>
-
 
     <div class="top-btn">
       <span class="material-symbols-outlined">arrow_upward</span>
@@ -496,7 +499,9 @@
     </p>
   </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type="module">
@@ -556,9 +561,100 @@
     });
 
 
-
   
 
+    
+    //brand intro : pantone 텍스트 효과 
+    document.querySelectorAll(".split").forEach(text => {
+        let theText = text.innerText;
+        let newText = "";
+
+        for(let i=0; i<text.innerText.length; i++){
+            newText += "<span aria-hidden='true'>";
+            if (text.innerText[i] == " "){
+                newText += " "
+            } else {
+                newText += text.innerText[i];
+            }
+            newText += "</span>";
+        }
+        text.innerHTML = newText;
+        text.setAttribute("aria-label", theText);
+    });
+    gsap.from(".split span",{
+      yPercent: 100,
+      autoAlpha: 0,
+      duration: 2,
+      ease: "circ.out",
+      stagger: 0.1,
+
+      scrollTrigger: {
+        trigger: ".split",
+        start: "-=100 center",
+        end: "+=100",
+        markers: false,
+        scrub: 1, 
+    }
+    });
+
+    //brand intro : 전체 나타나기 효과
+    const ani2 = gsap.timeline();
+    ani2.from(".brand-title", {x: -150, autoAlpha:0}) //왼쪽 -200px, opacity 0 시작 > 점점 나타나게
+        .from(".brand-desc", {x: 100, autoAlpha:0}) 
+
+    ScrollTrigger.create({
+        animation: ani2,
+        trigger: ".brand-intro", //brand-intro가 화면에 들어오면 애니메이션 작동
+        start: "-=700 top", //시작점 기준보다 700px위에
+        end: "+=400",
+        scrub: 1,
+        pin: false,
+        anticipatePin: 1,
+        markers: false,
+    });
+
+    //living in color & color mood : 전체 나타나기 효과
+    function createScrollAnimation(sectionSelector, contentSelector) {
+      const show1 = gsap.timeline();
+      show1.from(`${sectionSelector} .section-title`, { y: 150, autoAlpha: 0 })
+        .from(`${sectionSelector} ${contentSelector}`, { y: 150, autoAlpha: 0 });
+
+      ScrollTrigger.create({
+        animation: show1,
+        trigger: sectionSelector,
+        start: "top 80%",
+        end: "+=400",
+        scrub: 1,
+        pin: false,
+        anticipatePin: 1,
+        markers: false,
+      });
+    }
+
+    createScrollAnimation(".living-in-color", ".contents-living");
+    createScrollAnimation(".color-mood", ".wrap-mood-cont");
+
+
+    //our picks & review : 전체 나타나기 효과
+    function createScrollAnimation2(sectionSelector2, contentSelector2) {
+      const show2 = gsap.timeline();
+      show2.from(`${sectionSelector2} .top-title`, { y: 150, autoAlpha: 0 })
+        .from(`${sectionSelector2} ${contentSelector2}`, { y: 150, autoAlpha: 0 });
+
+      ScrollTrigger.create({
+        animation: show2,
+        trigger: sectionSelector2,
+        start: "top 80%",
+        end: "+=400",
+        scrub: 1,
+        pin: false,
+        anticipatePin: 1,
+        markers: false,
+      });
+    }
+
+    createScrollAnimation2(".our-picks", ".item-list");
+    createScrollAnimation2(".review", ".review-cont");
 </script>
 </body>
 </html>
