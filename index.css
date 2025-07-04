@@ -88,15 +88,18 @@ body{
 #header .wrap-header .gnb > li{
   margin: 0 10px;
   position: relative;
+  padding-bottom: 10px;
 }
 #header .wrap-header .gnb > li a{
   color: white;
 }
+
 #header .wrap-header .gnb li .gnb-sub{
   position: absolute;
+  top: 100%; left: 0px;
   width: 280px;
-  top: 40px; left: 0px;
   padding: 20px;
+  /* margin-top: 20px; */
   border-radius: 15px;
   background-color: rgb(255, 255, 255);
   display: none;
@@ -127,9 +130,12 @@ body{
   border-radius: 5px;
 }
 
-#header .wrap-header .gnb li:hover .gnb-sub{
+
+#header .wrap-header .gnb li:hover .gnb-sub,
+#header .wrap-header .gnb li .gnb-sub:hover{
   display: block;
 }
+
 
 
 #header .wrap-header .logo{
@@ -956,6 +962,7 @@ body{
   #header .wrap-header .gnb-toggle {
     display: block;
   }
+  
   #header .wrap-header .gnb{
     display: block;
     width: 300px;

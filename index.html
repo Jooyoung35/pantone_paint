@@ -19,6 +19,9 @@
             $('html, body').stop().animate({scrollTop : 0}, 500);
         });
 
+
+
+
         // 탑버튼 스크롤 하면 나타나기 
         const topBtn = document.querySelector('.top-btn');
 
@@ -30,7 +33,38 @@
         }
         });
 
-        //gnb 나타나기 ---
+
+        //gnb-sub 1280이상
+        
+        function desktopGnbHover() {
+          if ($(window).width() > 1280) {
+            $('.gnb > li').on('mouseenter', function() {
+              $(this).children('.gnb-sub').stop(true, true).fadeIn(150);
+            });
+
+            $('.gnb > li').on('mouseleave', function() {
+              $(this).children('.gnb-sub').stop(true, true).fadeOut(150);
+            });
+          } else {
+            // 모바일에서는 이벤트 제거
+            $('.gnb > li').off('mouseenter mouseleave');
+          }
+        }
+        
+
+        // 처음 로딩 시 실행
+        desktopGnbHover();
+
+        // 리사이즈할 때마다 반응
+        $(window).on('resize', function() {
+          desktopGnbHover();
+          resetGnbForDesktop(); // 기존 코드도 같이 유지
+        });
+
+
+
+
+        //gnb 나타나기(모바일) ---
         $('.gnb-toggle').click(function(){
           $('.gnb').toggleClass('active');
           $('.gnb-toggle').hide();
@@ -46,8 +80,9 @@
         
 
         //gnb 아코디언 메뉴(모바일)
+
         $('.gnb>li>a').click(function(e){
-          if ($(window).width() <= 1280) {
+          if ($(window).width() <= 1279) {
         e.preventDefault();  
 
         if($(this).hasClass("active")){ 
@@ -517,6 +552,12 @@
       header.classList.remove('scrolled');
       }
       });
+
+
+
+    // gnb부분
+
+
 
     //스와이퍼 living//
     const swiper = new Swiper('.living-Swiper', {
