@@ -81,7 +81,7 @@ body{
 #header .wrap-header .gnb{
   /* width: 40%; */
   display: flex;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   margin-top: 10px;
 }
@@ -141,7 +141,7 @@ body{
 #header .wrap-header .logo{
   /* width: 20%; */
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 50%;
   transform: translate(-50%);
   z-index: 5;
@@ -160,7 +160,7 @@ body{
   /* width: 40%; */
   display: flex;
   justify-content: flex-end;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   margin-top: 10px;
 }
@@ -271,7 +271,7 @@ body{
   color: #f7f7f7;
 }
 #section .main-banner .mainSwiper .slide .ban-txt .m-banner-kr{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 }
 #section .main-banner .mainSwiper .slide .ban-txt .m-banner-en{
@@ -279,7 +279,7 @@ body{
   font-weight: 300;
   font-style: italic;
   letter-spacing: 2;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 5px;
 }
 
